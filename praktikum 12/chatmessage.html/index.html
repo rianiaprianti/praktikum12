@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox</title>
+
+    <style>
+        *{
+            margin:center;
+            padding: 2%;
+            font-family: sans-serif;
+            
+        }
+        .container{
+           background-color: rgb(255, 200, 200);
+           width: 252px;
+           margin-left: 500px;
+           font-weight: bold;
+           box-shadow: 2px 2px 2px rgba(5,5,5,5.0);
+           
+
+        }
+
+        .container input{
+            display: flex;
+    
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+    
+        <div id="box" style="height: 250px; overflow-y:auto;"></div>
+
+        <div>
+            <input type="text" id="chat" onchange="send()" style="width: 190px;">
+            <button onclick="send()">Kirim</button>
+        </div>
+    </div>
+
+    <script>
+        function send() {
+            //tangkap elemen yang dibutuhkan 
+            const box = document.getElementById('box')
+            const chat = document.getElementById('chat')
+
+            // tampilkan pesan ke box
+            box.innerHTML += chat.value + '<br>'
+
+            //kosongkan input
+            chat.value = ''
+
+            //untuk scroll text nya kebawah
+            box.scrollTop = box.scrollHeight
+        }
+    </script>
+</body>
+</div>
+</html>

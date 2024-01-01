@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function image_picker(){
+            const list_gambar = ["singa.jpeg", "kuda.jpeg", "elang.jpeg", "gorila.jpeg"];
+            let pilihan = document.getElementById("option").value;
+
+            if(pilihan == "singa"){
+                let select = list_gambar[0];
+                document.getElementById("gambar").src = `img/${select}`;
+            }
+
+            if(pilihan == "kuda"){
+                let select = list_gambar[1];
+                document.getElementById("gambar").src = `img/${select}`;
+            }
+
+            if(pilihan == "elang"){
+                let select = list_gambar[2];
+                document.getElementById("gambar").src = `img/${select}`;
+            }
+
+            if(pilihan == "gorila"){
+                let select = list_gambar[3];
+                document.getElementById("gambar").src = `img/${select}`;
+            }
+        }
+    </script>
+</head>
+<body>
+   <h1>Image Picker</h1>
+   
+   
+   <select name="" id="option" onchange="image_picker()">
+        <option value="">Pilih gambar</option>
+        <option value="singa">Singa</option>
+        <option value="kuda">Kuda</option>
+        <option value="elang">Elang</option>
+        <option value="gorila">Gorila</option>
+   </select>
+
+   <div class="container">
+    <img id="gambar" width="100px">
+   </div>
+</body>
+</html>
